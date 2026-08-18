@@ -64,12 +64,12 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            margin-left: 0; /* An den linken Rand gerückt */
-            padding-left: 1rem; /* Optional: Etwas Abstand zum Rand */
+            margin-left: 0;
+            padding-left: 1rem;
         }
 
         .logo-line {
-            font-size: 1.5rem; /* Größere Schrift */
+            font-size: 1.5rem;
             font-weight: bold;
             color: var(--weare-white);
             text-transform: lowercase;
@@ -127,6 +127,7 @@
             font-size: 1.1rem;
             color: var(--weare-dark-gray);
             max-width: 800px;
+            text-align: justify;
         }
 
         /* Section Styles */
@@ -233,6 +234,7 @@
             color: var(--weare-dark-gray);
             line-height: 1.7;
             margin-bottom: 1.5rem;
+            text-align: justify;
         }
 
         /* Skill Cards */
@@ -260,10 +262,10 @@
         }
 
         .skill-card p {
+            text-align: justify;
             font-size: 0.95rem;
             line-height: 1.6;
             color: var(--weare-white);
-            text-align: left;
         }
 
         /* Marquee Banner */
@@ -352,6 +354,7 @@
         }
 
         .timeline-item p {
+            text-align: justify;
             font-size: 0.95rem;
             color: var(--weare-dark-gray);
             line-height: 1.7;
@@ -395,6 +398,7 @@
         }
 
         .motivation-section p {
+            text-align: justify;
             font-size: 1.1rem;
             color: var(--weare-dark-gray);
             line-height: 1.7;
@@ -435,6 +439,7 @@
         }
 
         .cta-text p {
+            text-align: justify;
             font-size: 1.1rem;
             color: var(--weare-dark-gray);
             line-height: 1.7;
@@ -452,7 +457,6 @@
             font-size: 0.9rem;
             color: var(--weare-white);
             opacity: 0.9;
-            /* text-transform: lowercase; --> Diese Zeile wurde entfernt */
         }
 
         /* Responsive */
@@ -536,6 +540,14 @@
 
             .motivation-section {
                 padding: 0 1.5rem;
+            }
+
+            .cta-text p {
+                text-align: center;
+            }
+
+            .motivation-section p {
+                text-align: center;
             }
         }
     </style>
