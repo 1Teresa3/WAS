@@ -48,7 +48,7 @@
         /* Navigation unter dem Banner */
         .nav-container {
             background-color: var(--weare-red);
-            padding: 0.6rem 2rem;
+            padding: 0.5rem 2rem;
             border-bottom: 1px solid var(--weare-light-gray);
             position: fixed;
             top: 24px;
@@ -56,14 +56,16 @@
             width: 100%;
             z-index: 999;
             text-align: right;
+            display: flex;
+            align-items: center;
         }
 
         .nav-links {
             display: flex;
             gap: 1.5rem;
             align-items: center;
-            height: fit-content;
             justify-content: flex-end;
+            width: 100%;
         }
 
         .nav-links a {
@@ -74,6 +76,7 @@
             transition: opacity 0.3s;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            line-height: 1.4;
         }
 
         .nav-links a:hover {
@@ -82,7 +85,7 @@
 
         /* Main Content */
         main {
-            margin-top: 78px;
+            margin-top: 79px;
         }
 
         /* Hero Section */
@@ -439,9 +442,8 @@
         /* Responsive */
         @media (max-width: 768px) {
             .nav-container {
-                padding: 0.6rem 1rem;
+                padding: 0.5rem 1rem;
                 top: 24px;
-                text-align: left;
             }
 
             .nav-links {
