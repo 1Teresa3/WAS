@@ -58,7 +58,7 @@
 
         .header-content {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: flex-start;
         }
 
@@ -86,6 +86,7 @@
             left: 0;
             width: 100%;
             z-index: 999;
+            text-align: right; /* Rechtsbündig */
         }
 
         .nav-links {
@@ -93,6 +94,7 @@
             gap: 1.5rem;
             align-items: center;
             height: fit-content;
+            justify-content: flex-end; /* Rechtsbündig */
         }
 
         .nav-links a {
@@ -479,12 +481,14 @@
             .nav-container {
                 padding: 0.5rem 1rem;
                 top: 56px;
+                text-align: left; /* Auf kleinen Bildschirmen linksbündig */
             }
 
             .nav-links {
                 flex-direction: column;
                 gap: 0.5rem;
                 align-items: flex-start;
+                justify-content: flex-start;
             }
 
             .about-content {
