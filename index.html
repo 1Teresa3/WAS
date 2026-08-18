@@ -154,6 +154,30 @@ type: text/html
             padding-left: 3rem;
         }
 
+        /* About Section Layout */
+        .about-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            padding: 0 3rem;
+        }
+
+        .about-text {
+            flex: 1;
+            max-width: 600px;
+            text-align: justify;
+        }
+
+        .about-gif {
+            flex: 0 0 200px;
+        }
+
+        .about-gif img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
         /* Text Block */
         .text-block {
             max-width: 600px;
@@ -428,6 +452,16 @@ type: text/html
                 align-items: flex-start;
             }
 
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+                padding: 0 1.5rem;
+            }
+
+            .about-gif {
+                margin-top: 1.5rem;
+            }
+
             .hero {
                 padding: 4rem 1.5rem 2rem;
             }
@@ -514,20 +548,18 @@ type: text/html
 
         <!-- About Section -->
         <section id="about">
-            <div class="text-block">
-                <p>
-                    Hallo We Are Social Team,<br><br>
-                    Ich hatte mich bereits vor einem Monat bei euch beworben und aktuell weder Zu- noch Absage erhalten. Nach Schrödingers Katzen Gedankenexperiment ist somit noch alles möglich für mich!
-                    Weil mich die Stellenausschreibung wirklich anspricht, versuche ich es gerne nochmal. Zusätzlich habe ich in der Zwischenzeit meine Skills etwas erweitert und reiche euch eine Website, die ich mithilfe von Vibe Coding erstellt habe, als Bewerbung ein.<br><br>
-                    <strong>#herewego 👩🏻‍💻</strong>
-                </p>
-            </div>
-            <div class="two-column">
-                <div></div>
-                <div class="column-content">
-                    <div class="gif-container">
-                        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZms1bGFwbGthOWZpbnk3MTZ4a2o4cndtcmhoc3JhbDhhaTBpaDd6cCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/JIX9t2j0ZTN9S/giphy.gif" alt="Coding GIF">
-                    </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title" style="padding-left: 0; text-align: left;">Über diese Website</h2>
+                    <p>
+                        Hallo We Are Social Team,<br><br>
+                        Ich hatte mich bereits vor einem Monat bei euch beworben und aktuell weder Zu- noch Absage erhalten. Nach Schrödingers Katzen Gedankenexperiment ist somit noch alles möglich für mich!
+                        Weil mich die Stellenausschreibung wirklich anspricht, versuche ich es gerne nochmal. Zusätzlich habe ich in der Zwischenzeit meine Skills etwas erweitert und reiche euch eine Website, die ich mithilfe von Vibe Coding erstellt habe, als Bewerbung ein.<br><br>
+                        <strong>#herewego 👩🏻‍💻</strong>
+                    </p>
+                </div>
+                <div class="about-gif">
+                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZms1bGFwbGthOWZpbnk3MTZ4a2o4cndtcmhoc3JhbDhhaTBpaDd6cCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/JIX9t2j0ZTN9S/giphy.gif" alt="Coding GIF">
                 </div>
             </div>
         </section>
