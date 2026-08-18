@@ -57,16 +57,12 @@ type: text/html
             left: 0;
             width: 100%;
             background-color: var(--weare-red);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+            padding: 0.5rem 2rem;
             z-index: 1000;
         }
 
-        .header-container {
+        .header-content {
             display: flex;
-            width: 100%;
             justify-content: space-between;
             align-items: flex-start;
         }
@@ -87,9 +83,9 @@ type: text/html
 
         .nav-links {
             display: flex;
-            flex-direction: column;
-            gap: 0.2rem;
-            align-items: flex-start;
+            gap: 1.5rem;
+            align-items: center;
+            height: fit-content;
         }
 
         .nav-links a {
@@ -108,7 +104,7 @@ type: text/html
 
         /* Main Content */
         main {
-            margin-top: 120px;
+            margin-top: 100px;
         }
 
         /* Hero Section */
@@ -138,7 +134,7 @@ type: text/html
 
         /* Section Styles */
         section {
-            padding: 6rem 0;
+            padding: 2rem 0;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -150,6 +146,20 @@ type: text/html
             color: var(--weare-black);
             text-transform: uppercase;
             letter-spacing: 0.02em;
+            text-align: left;
+            padding-left: 3rem;
+        }
+
+        .section-title.skills-title {
+            padding-left: 3rem;
+        }
+
+        /* Text Block */
+        .text-block {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: justify;
+            padding: 0 3rem;
         }
 
         /* Two-Column Layout */
@@ -221,6 +231,7 @@ type: text/html
             white-space: nowrap;
             width: 100vw;
             margin-left: calc(-50vw + 50%);
+            margin-top: 2rem;
             border-radius: 0;
         }
 
@@ -403,26 +414,18 @@ type: text/html
         /* Responsive */
         @media (max-width: 768px) {
             .header {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem;
+                padding: 0.5rem 1rem;
             }
 
-            .header-container {
+            .header-content {
                 flex-direction: column;
                 gap: 1rem;
-            }
-
-            .logo-container {
-                margin-bottom: 1rem;
-                align-items: flex-start;
             }
 
             .nav-links {
-                flex-direction: row;
-                gap: 1rem;
-                justify-content: flex-start;
-                width: 100%;
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
             }
 
             .hero {
@@ -434,7 +437,11 @@ type: text/html
             }
 
             section {
-                padding: 4rem 1.5rem;
+                padding: 2rem 0;
+            }
+
+            .section-title {
+                padding-left: 1.5rem;
             }
 
             .two-column {
@@ -444,6 +451,10 @@ type: text/html
 
             .skills-grid {
                 grid-template-columns: 1fr;
+                padding: 0 1.5rem;
+            }
+
+            .text-block {
                 padding: 0 1.5rem;
             }
 
@@ -475,7 +486,7 @@ type: text/html
 
     <!-- Header -->
     <header class="header">
-        <div class="header-container">
+        <div class="header-content">
             <div class="logo-container">
                 <a href="#" class="logo-line">we</a>
                 <a href="#" class="logo-line">are</a>
@@ -503,15 +514,16 @@ type: text/html
 
         <!-- About Section -->
         <section id="about">
+            <div class="text-block">
+                <p>
+                    Hallo We Are Social Team,<br><br>
+                    Ich hatte mich bereits vor einem Monat bei euch beworben und aktuell weder Zu- noch Absage erhalten. Nach Schrödingers Katzen Gedankenexperiment ist somit noch alles möglich für mich!
+                    Weil mich die Stellenausschreibung wirklich anspricht, versuche ich es gerne nochmal. Zusätzlich habe ich in der Zwischenzeit meine Skills etwas erweitert und reiche euch eine Website, die ich mithilfe von Vibe Coding erstellt habe, als Bewerbung ein.<br><br>
+                    <strong>#herewego 👩🏻‍💻</strong>
+                </p>
+            </div>
             <div class="two-column">
-                <div class="column-content">
-                    <h2 class="section-title">Über diese Website</h2>
-                    <p>
-                        Hallo We Are Social Team,<br>
-                        Ich hatte mich bereits vor einem Monat bei euch beworben und aktuell weder Zu- noch Absage erhalten. Nach Schrödingers Katzen Gedankenexperiment ist somit noch alles möglich für mich!
-                        Weil mich die Stellenausschreibung wirklich anspricht, versuche ich es gerne nochmal. Zusätzlich habe ich in der Zwischenzeit meine Skills etwas erweitert und reiche euch eine Website, die ich mithilfe von Vibe Coding erstellt habe, als Bewerbung ein.<br><strong>#herewego 👩🏻‍💻</strong>
-                    </p>
-                </div>
+                <div></div>
                 <div class="column-content">
                     <div class="gif-container">
                         <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZms1bGFwbGthOWZpbnk3MTZ4a2o4cndtcmhoc3JhbDhhaTBpaDd6cCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/JIX9t2j0ZTN9S/giphy.gif" alt="Coding GIF">
@@ -610,7 +622,7 @@ type: text/html
 
         <!-- Skills Section -->
         <section id="skills">
-            <h2 class="section-title">Fähigkeiten</h2>
+            <h2 class="section-title skills-title">Fähigkeiten</h2>
             <div class="skills-grid">
                 <div class="skill-card">
                     <h3>Fachliches Wissen durch mein Studium</h3>
@@ -697,7 +709,7 @@ type: text/html
 
     <!-- Footer -->
     <footer class="footer">
-        <p>Bewerbung für we are social</p>
+        <p>bewerbung für we are social</p>
     </footer>
 </body>
 </html>
