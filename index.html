@@ -64,6 +64,13 @@ type: text/html
             z-index: 1000;
         }
 
+        .header-container {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
         .logo-container {
             display: flex;
             flex-direction: column;
@@ -82,7 +89,6 @@ type: text/html
             display: flex;
             flex-direction: column;
             gap: 0.2rem;
-            justify-content: flex-start;
             align-items: flex-start;
         }
 
@@ -132,7 +138,7 @@ type: text/html
 
         /* Section Styles */
         section {
-            padding: 6rem 3rem;
+            padding: 6rem 0;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -152,6 +158,7 @@ type: text/html
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
+            padding: 0 3rem;
         }
 
         .column-content {
@@ -176,6 +183,35 @@ type: text/html
             margin-bottom: 1.5rem;
         }
 
+        /* Skill Cards */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 0 3rem;
+        }
+
+        .skill-card {
+            background-color: var(--weare-red);
+            color: var(--weare-white);
+            padding: 1.5rem;
+            border-radius: 0;
+            text-align: left;
+        }
+
+        .skill-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .skill-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--weare-white);
+        }
+
         /* Marquee Banner */
         .marquee-container {
             background-color: var(--weare-dark-gray);
@@ -183,8 +219,8 @@ type: text/html
             padding: 1rem 0;
             overflow: hidden;
             white-space: nowrap;
-            margin: 4rem 0;
-            width: 100%;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
             border-radius: 0;
         }
 
@@ -297,32 +333,22 @@ type: text/html
             background-color: var(--weare-black);
         }
 
-        /* Contact Section */
-        .contact-info {
-            max-width: 700px;
-            margin: 0 auto;
+        /* Motivation Section */
+        .motivation-section {
             text-align: center;
+            padding: 0 3rem;
         }
 
-        /* Footer */
-        .footer {
-            background-color: var(--weare-red);
-            color: var(--weare-white);
-            padding: 3rem;
-            text-align: center;
-        }
-
-        .footer p {
-            font-size: 0.9rem;
-            color: var(--weare-white);
-            opacity: 0.9;
-            text-transform: lowercase;
+        .motivation-section p {
+            font-size: 1.1rem;
+            color: var(--weare-dark-gray);
+            line-height: 1.7;
         }
 
         /* CTA Section */
         .cta-section {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 2fr 1fr;
             gap: 2rem;
             align-items: center;
             max-width: 1200px;
@@ -359,9 +385,19 @@ type: text/html
             line-height: 1.7;
         }
 
-        /* Motivation Section */
-        .motivation-section {
+        /* Footer */
+        .footer {
+            background-color: var(--weare-red);
+            color: var(--weare-white);
+            padding: 3rem;
             text-align: center;
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+            color: var(--weare-white);
+            opacity: 0.9;
+            text-transform: lowercase;
         }
 
         /* Responsive */
@@ -372,15 +408,21 @@ type: text/html
                 padding: 1rem;
             }
 
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
             .logo-container {
                 margin-bottom: 1rem;
                 align-items: flex-start;
             }
 
             .nav-links {
-                gap: 0.5rem;
-                flex-direction: column;
-                align-items: flex-start;
+                flex-direction: row;
+                gap: 1rem;
+                justify-content: flex-start;
+                width: 100%;
             }
 
             .hero {
@@ -397,6 +439,12 @@ type: text/html
 
             .two-column {
                 grid-template-columns: 1fr;
+                padding: 0 1.5rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1.5rem;
             }
 
             .timeline {
@@ -406,10 +454,15 @@ type: text/html
             .cta-section {
                 grid-template-columns: 1fr;
                 text-align: center;
+                padding: 4rem 1.5rem;
             }
 
             .cta-gif {
                 order: -1;
+            }
+
+            .motivation-section {
+                padding: 0 1.5rem;
             }
         }
     </style>
@@ -422,19 +475,21 @@ type: text/html
 
     <!-- Header -->
     <header class="header">
-        <div class="logo-container">
-            <a href="#" class="logo-line">we</a>
-            <a href="#" class="logo-line">are</a>
-            <a href="#" class="logo-line">social</a>
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="#" class="logo-line">we</a>
+                <a href="#" class="logo-line">are</a>
+                <a href="#" class="logo-line">social</a>
+            </div>
+            <nav class="nav-links">
+                <a href="#about">Über diese Website</a>
+                <a href="#education">Ausbildung</a>
+                <a href="#experience">Erfahrung</a>
+                <a href="#skills">Fähigkeiten</a>
+                <a href="#motivation">Why me?</a>
+                <a href="#contact">LinkedIn</a>
+            </nav>
         </div>
-        <nav class="nav-links">
-            <a href="#about">Über diese Website</a>
-            <a href="#education">Ausbildung</a>
-            <a href="#experience">Erfahrung</a>
-            <a href="#skills">Fähigkeiten</a>
-            <a href="#motivation">Why me?</a>
-            <a href="#contact">LinkedIn</a>
-        </nav>
     </header>
 
     <main>
@@ -498,7 +553,7 @@ type: text/html
                     </p>
                 </div>
                 <div class="timeline-item">
-                    <h4>Alexander-Puschkin-Oberschule</h4>
+                    <h4>Alexander-Pushkin-Oberschule</h4>
                     <p class="period">Erweiterter Hauptschulabschluss | 2004 - 2009</p>
                 </div>
             </div>
@@ -556,44 +611,38 @@ type: text/html
         <!-- Skills Section -->
         <section id="skills">
             <h2 class="section-title">Fähigkeiten</h2>
-            <div class="two-column">
-                <div class="column-content">
+            <div class="skills-grid">
+                <div class="skill-card">
                     <h3>Fachliches Wissen durch mein Studium</h3>
                     <p>
                         Die Kurse Marketing und Entrepreneurship haben mir den Denkansatz vermittelt: Wo stehen wir, wo wollen wir hin, und was muss dafür getan werden? Und wie dieser praktisch, agil z.B. mit der scrum-Methode umgesetzt wird. Diese Entscheidungen will ich nicht nur auf Basis eines Bauchgefühls oder Meinung treffen, sondern auch Daten nutzen, die dafür zur Verfügung stehen.
                     </p>
                 </div>
-                <div class="column-content">
+                <div class="skill-card">
                     <h3>Neugier & Lernbereitschaft</h3>
                     <p>
                         Um den Anforderungen einer digitalen Welt gerecht zu werden, absolvierte ich im Anschluss an mein Studium eine Weiterbildung in Data Analytics. Dort lernte ich mit der Ressource Data zu arbeiten und Erkenntnisse aus dieser zu gewinnen. Danach besuchte ich einen Spanischkurs an der Volkshochschule, um meine Skills aufzufrischen. Und vor ein paar Wochen einen Schachclub.
                     </p>
                 </div>
-            </div>
-
-            <div class="two-column">
-                <div class="column-content">
+                <div class="skill-card">
                     <h3>Ausgebildete Friseurin</h3>
                     <p>
                         Durch meine Ausbildung im Atelier Reisenweber zur Friseurin habe ich mehrjährige Erfahrung mit direktem Kundenkontakt. Ich führte täglich mehrmals Wellness-Dienstleistungen wie Kopf- und Handmassagen mit High-End-Produkten an unseren Kunden durch. Diese Achtsamkeit gegenüber dem Kunden gehörte zur Philosophie des Salons wie von La Biosthétique.
                     </p>
                 </div>
-                <div class="column-content">
+                <div class="skill-card">
                     <h3>Ausgeprägte Belastbarkeit</h3>
                     <p>
                         Ist bei mir nicht nur ein 0815-Spruch. Seit über 13 Jahren arbeite ich in der Eventbranche und Gastronomie, meist abends. Hier kann sich die Stimmung innerhalb weniger Minuten ändern und über Stunden anhalten. Mal verlangt eine Nonstop-High-Performance unter immenser Belastung alles ab, mal bleibt der Andrang aus. Egal wie die aktuelle Anforderung ist, mein Lächeln schwindet gegenüber den Gästen und Kollegen nicht.
                     </p>
                 </div>
-            </div>
-
-            <div class="two-column">
-                <div class="column-content">
+                <div class="skill-card">
                     <h3>Erste internationale Erfahrung</h3>
                     <p>
                         In meinem Pflichtpraktikum bei sonneco wurde mir von der Geschäftsführung die Aufgabe übertragen, in Erfahrung zu bringen, welche Schritte nötig sind, um in andere Länder zu expandieren. Ich führte eigenständig Gespräche mit Wirtschaftsvertretungen und bereitete die Informationen im Anschluss auf. Des Weiteren arbeitete ich mit internationalen Kunden bei Le Jardin sowie einem internationalen Team.
                     </p>
                 </div>
-                <div class="column-content">
+                <div class="skill-card">
                     <h3>Kreativität</h3>
                     <p>
                         Die Wörter analytisch und kreativ sind bei mir kein „entweder, oder“. Abgesehen von schnellen kreativen Problemlösungen, die man als Eventmanagerin immer parat haben muss, verwirkliche ich meine Kreativität in der analogen Fotografie, abstrakter Malerei wie Interesse an Kultur, Theater und Museen. Ich mag es, für mich schöne Dinge zu erschaffen. Genau so wie das Entdecken von unbekannten Geschichten.
@@ -625,15 +674,10 @@ type: text/html
         <!-- Motivation Section -->
         <section id="motivation" class="motivation-section">
             <h2 class="section-title">Why me?</h2>
-            <div class="two-column">
-                <div class="column-content">
-                    <p style="font-size: 1.1rem;">
-                        <strong>Friseurin. Betriebswirtin. Data Analyst.</strong><br><br>
-                        Mit meiner Ausbildung und Berufserfahrung sowie Lernbereitschaft im beruflichen wie privaten Bereich glaube ich, gemeinsam als Team dazu beizutragen, we are social weiter auszubauen.
-                    </p>
-                </div>
-                <div class="column-content"></div>
-            </div>
+            <p>
+                <strong>Friseurin. Betriebswirtin. Data Analyst.</strong><br><br>
+                Mit meiner Ausbildung und Berufserfahrung sowie Lernbereitschaft im beruflichen wie privaten Bereich glaube ich, gemeinsam als Team dazu beizutragen, we are social weiter auszubauen.
+            </p>
         </section>
 
         <!-- CTA Section -->
@@ -653,7 +697,7 @@ type: text/html
 
     <!-- Footer -->
     <footer class="footer">
-        <p>bewerbung für we are social</p>
+        <p>Bewerbung für we are social</p>
     </footer>
 </body>
 </html>
