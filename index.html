@@ -60,15 +60,14 @@ type: text/html
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
             z-index: 1000;
         }
 
         .logo-container {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            flex: 1;
+            align-items: flex-start;
         }
 
         .logo-line {
@@ -79,14 +78,11 @@ type: text/html
             line-height: 1.2;
         }
 
-        .logo-center {
-            font-weight: 400;
-        }
-
         .nav-links {
             display: flex;
             gap: 1.5rem;
             justify-content: flex-end;
+            align-items: flex-start;
         }
 
         .nav-links a {
@@ -166,6 +162,10 @@ type: text/html
 
         .column-content {
             padding: 1rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
 
         .column-content h3 {
@@ -324,6 +324,46 @@ type: text/html
             opacity: 0.9;
         }
 
+        /* CTA Section */
+        .cta-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 3rem;
+        }
+
+        .cta-gif {
+            text-align: center;
+        }
+
+        .cta-gif img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .cta-text {
+            text-align: center;
+        }
+
+        .cta-text h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--weare-black);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .cta-text p {
+            font-size: 1.1rem;
+            color: var(--weare-dark-gray);
+            line-height: 1.7;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .header {
@@ -334,11 +374,13 @@ type: text/html
 
             .logo-container {
                 margin-bottom: 1rem;
+                align-items: flex-start;
             }
 
             .nav-links {
                 gap: 1rem;
                 justify-content: center;
+                width: 100%;
             }
 
             .hero {
@@ -359,6 +401,15 @@ type: text/html
 
             .timeline {
                 padding-left: 1rem;
+            }
+
+            .cta-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .cta-gif {
+                order: -1;
             }
         }
     </style>
@@ -577,7 +628,7 @@ type: text/html
             <h2 class="section-title">Why me?</h2>
             <div class="two-column">
                 <div class="column-content">
-                    <p style="font-size: 1.1rem; text-align: center;">
+                    <p style="font-size: 1.1rem;">
                         <strong>Friseurin. Betriebswirtin. Data Analyst.</strong><br><br>
                         Mit meiner Ausbildung und Berufserfahrung sowie Lernbereitschaft im beruflichen wie privaten Bereich glaube ich, gemeinsam als Team dazu beizutragen, We Are Social weiter auszubauen.
                     </p>
@@ -586,10 +637,17 @@ type: text/html
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <div class="contact-info">
-                <a href="https://www.linkedin.com/in/teresa-mesia-8160041a2/" class="cta-button" target="_blank">LinkedIn-Profil</a>
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-gif">
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXJmNzE4cXoycHQ4Ym51a2oybm1yZ3JocjB6azRsZHhvaTh1MjFscyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/yPhqlJccIOaru/giphy.gif" alt="CTA GIF Left">
+            </div>
+            <div class="cta-text">
+                <h2>Hit me up!</h2>
+                <p>Ich freue mich darauf, We Are Social bei einem Gespräch kennenzulernen und mehr über die Stelle zu erfahren.</p>
+            </div>
+            <div class="cta-gif">
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHEyb25lZGM2Y3QwZnFycXF1bDdweTYwejFxd2Z5NWFxaTQyMWZleCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l41m5YJ56zcextOSY/giphy.gif" alt="CTA GIF Right">
             </div>
         </section>
     </main>
