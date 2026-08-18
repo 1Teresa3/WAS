@@ -45,48 +45,17 @@
             z-index: 1001;
         }
 
-        /* Header */
-        .header {
-            position: fixed;
-            top: 28px;
-            left: 0;
-            width: 100%;
-            background-color: var(--weare-red);
-            padding: 0.5rem 2rem;
-            z-index: 1000;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-        }
-
-        .logo-container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .logo-line {
-            font-size: 1.2rem;
-            color: var(--weare-white);
-            text-decoration: none;
-            text-transform: lowercase;
-            line-height: 1.2;
-        }
-
         /* Navigation unter dem Banner */
         .nav-container {
             background-color: var(--weare-white);
             padding: 0.5rem 2rem;
             border-bottom: 1px solid var(--weare-light-gray);
             position: fixed;
-            top: 56px; /* Unter dem Top Banner */
+            top: 28px;
             left: 0;
             width: 100%;
             z-index: 999;
-            text-align: right; /* Rechtsbündig */
+            text-align: right;
         }
 
         .nav-links {
@@ -94,7 +63,7 @@
             gap: 1.5rem;
             align-items: center;
             height: fit-content;
-            justify-content: flex-end; /* Rechtsbündig */
+            justify-content: flex-end;
         }
 
         .nav-links a {
@@ -113,7 +82,7 @@
 
         /* Main Content */
         main {
-            margin-top: 120px; /* Anpassung für Top Banner + Navigation */
+            margin-top: 80px;
         }
 
         /* Hero Section */
@@ -469,19 +438,10 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .header {
-                padding: 0.5rem 1rem;
-            }
-
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
             .nav-container {
                 padding: 0.5rem 1rem;
-                top: 56px;
-                text-align: left; /* Auf kleinen Bildschirmen linksbündig */
+                top: 28px;
+                text-align: left;
             }
 
             .nav-links {
@@ -556,17 +516,6 @@
     <div class="top-banner">
         <span>New 🔥 Application</span>
     </div>
-
-    <!-- Header mit Logo -->
-    <header class="header">
-        <div class="header-content">
-            <div class="logo-container">
-                <span class="logo-line">we</span>
-                <span class="logo-line">are</span>
-                <span class="logo-line">social</span>
-            </div>
-        </div>
-    </header>
 
     <!-- Navigation unter dem Banner -->
     <nav class="nav-container">
