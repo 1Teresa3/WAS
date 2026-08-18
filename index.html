@@ -150,6 +150,11 @@ type: text/html
             padding-left: 3rem;
         }
 
+        .section-title.centered {
+            text-align: center;
+            padding-left: 0;
+        }
+
         .section-title.skills-title {
             padding-left: 3rem;
         }
@@ -164,16 +169,32 @@ type: text/html
 
         .about-text {
             flex: 1;
-            max-width: 600px;
+        }
+
+        .about-text h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--weare-black);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            text-align: left;
+            padding-left: 0;
+        }
+
+        .about-text p {
             text-align: justify;
+            font-size: 1rem;
+            color: var(--weare-dark-gray);
+            line-height: 1.7;
         }
 
         .about-gif {
-            flex: 0 0 200px;
+            flex: 0 0 300px;
         }
 
         .about-gif img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
             border-radius: 8px;
         }
@@ -454,11 +475,11 @@ type: text/html
 
             .about-content {
                 flex-direction: column;
-                align-items: center;
                 padding: 0 1.5rem;
             }
 
             .about-gif {
+                flex: 1;
                 margin-top: 1.5rem;
             }
 
@@ -550,7 +571,7 @@ type: text/html
         <section id="about">
             <div class="about-content">
                 <div class="about-text">
-                    <h2 class="section-title" style="padding-left: 0; text-align: left;">Über diese Website</h2>
+                    <h2>Über diese Website</h2>
                     <p>
                         Hallo We Are Social Team,<br><br>
                         Ich hatte mich bereits vor einem Monat bei euch beworben und aktuell weder Zu- noch Absage erhalten. Nach Schrödingers Katzen Gedankenexperiment ist somit noch alles möglich für mich!
@@ -717,7 +738,7 @@ type: text/html
 
         <!-- Motivation Section -->
         <section id="motivation" class="motivation-section">
-            <h2 class="section-title">Why me?</h2>
+            <h2 class="section-title centered">Why me?</h2>
             <p>
                 <strong>Friseurin. Betriebswirtin. Data Analyst.</strong><br><br>
                 Mit meiner Ausbildung und Berufserfahrung sowie Lernbereitschaft im beruflichen wie privaten Bereich glaube ich, gemeinsam als Team dazu beizutragen, we are social weiter auszubauen.
