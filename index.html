@@ -80,8 +80,9 @@ type: text/html
 
         .nav-links {
             display: flex;
-            gap: 1.5rem;
-            justify-content: flex-end;
+            flex-direction: column;
+            gap: 0.2rem;
+            justify-content: flex-start;
             align-items: flex-start;
         }
 
@@ -143,13 +144,6 @@ type: text/html
             color: var(--weare-black);
             text-transform: uppercase;
             letter-spacing: 0.02em;
-        }
-
-        .section-subtitle {
-            font-size: 1rem;
-            color: var(--weare-dark-gray);
-            margin-bottom: 3rem;
-            max-width: 600px;
         }
 
         /* Two-Column Layout */
@@ -322,6 +316,7 @@ type: text/html
             font-size: 0.9rem;
             color: var(--weare-white);
             opacity: 0.9;
+            text-transform: lowercase;
         }
 
         /* CTA Section */
@@ -364,6 +359,11 @@ type: text/html
             line-height: 1.7;
         }
 
+        /* Motivation Section */
+        .motivation-section {
+            text-align: center;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .header {
@@ -378,9 +378,9 @@ type: text/html
             }
 
             .nav-links {
-                gap: 1rem;
-                justify-content: center;
-                width: 100%;
+                gap: 0.5rem;
+                flex-direction: column;
+                align-items: flex-start;
             }
 
             .hero {
@@ -556,7 +556,6 @@ type: text/html
         <!-- Skills Section -->
         <section id="skills">
             <h2 class="section-title">Fähigkeiten</h2>
-            <p class="section-subtitle">Was ich mitbringe</p>
             <div class="two-column">
                 <div class="column-content">
                     <h3>Fachliches Wissen durch mein Studium</h3>
@@ -624,13 +623,13 @@ type: text/html
         </section>
 
         <!-- Motivation Section -->
-        <section id="motivation">
+        <section id="motivation" class="motivation-section">
             <h2 class="section-title">Why me?</h2>
             <div class="two-column">
                 <div class="column-content">
                     <p style="font-size: 1.1rem;">
                         <strong>Friseurin. Betriebswirtin. Data Analyst.</strong><br><br>
-                        Mit meiner Ausbildung und Berufserfahrung sowie Lernbereitschaft im beruflichen wie privaten Bereich glaube ich, gemeinsam als Team dazu beizutragen, We Are Social weiter auszubauen.
+                        Mit meiner Ausbildung und Berufserfahrung sowie Lernbereitschaft im beruflichen wie privaten Bereich glaube ich, gemeinsam als Team dazu beizutragen, we are social weiter auszubauen.
                     </p>
                 </div>
                 <div class="column-content"></div>
@@ -644,7 +643,7 @@ type: text/html
             </div>
             <div class="cta-text">
                 <h2>Hit me up!</h2>
-                <p>Ich freue mich darauf, We Are Social bei einem Gespräch kennenzulernen und mehr über die Stelle zu erfahren.</p>
+                <p>Ich freue mich darauf, we are social bei einem Gespräch kennenzulernen und mehr über die Stelle zu erfahren.</p>
             </div>
             <div class="cta-gif">
                 <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHEyb25lZGM2Y3QwZnFycXF1bDdweTYwejFxd2Z5NWFxaTQyMWZleCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l41m5YJ56zcextOSY/giphy.gif" alt="CTA GIF Right">
@@ -654,7 +653,7 @@ type: text/html
 
     <!-- Footer -->
     <footer class="footer">
-        <p>Bewerbung für We Are Social</p>
+        <p>bewerbung für we are social</p>
     </footer>
 </body>
 </html>
