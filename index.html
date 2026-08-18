@@ -15,7 +15,7 @@ type: text/html
             --weare-black: #000000;
             --weare-white: #FFFFFF;
             --weare-gray: #F0F0F0;
-            --weare-dark-gray: #333333;
+            --weare-dark-gray: #2A2A2A;
             --weare-light-gray: #E0E0E0;
             --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
@@ -64,27 +64,28 @@ type: text/html
             z-index: 1000;
         }
 
-        .header-content {
+        .logo-container {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            width: 100%;
+            flex: 1;
+        }
+
+        .logo-line {
+            font-size: 1.2rem;
+            color: var(--weare-white);
+            text-decoration: none;
+            text-transform: lowercase;
+            line-height: 1.2;
         }
 
         .logo-left {
-            font-size: 1.2rem;
             font-weight: 300;
-            color: var(--weare-white);
-            text-decoration: none;
             font-style: italic;
-            text-transform: lowercase;
         }
 
         .logo-center {
-            font-size: 1.2rem;
             font-weight: 400;
-            color: var(--weare-white);
-            text-decoration: none;
-            text-transform: lowercase;
         }
 
         .nav-links {
@@ -185,9 +186,9 @@ type: text/html
             margin-bottom: 1.5rem;
         }
 
-        /*Marquee Banner*/
+        /* Marquee Banner */
         .marquee-container {
-            background-color: #c8d0c8;
+            background-color: var(--weare-dark-gray);
             color: var(--weare-white);
             padding: 1rem 0;
             overflow: hidden;
@@ -211,7 +212,7 @@ type: text/html
             font-weight: 400;
             letter-spacing: 0.1em;
             margin-right: 3rem;
-            color: var(--weare-black);
+            color: var(--weare-white);
         }
 
         @keyframes marquee {
@@ -277,38 +278,16 @@ type: text/html
             line-height: 1.7;
         }
 
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .skill-item {
-            background-color: var(--weare-gray);
-            padding: 2rem;
-            border-radius: 0;
+        /* GIF Style */
+        .gif-container {
             text-align: center;
-            transition: all 0.3s;
-            border: 1px solid var(--weare-light-gray);
+            margin: 2rem 0;
         }
 
-        .skill-item:hover {
-            background-color: var(--weare-red);
-            color: var(--weare-white);
-        }
-
-        .skill-item h4 {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--weare-black);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .skill-item:hover h4 {
-            color: var(--weare-white);
+        .gif-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
         }
 
         /* CTA Button */
@@ -351,18 +330,6 @@ type: text/html
             opacity: 0.9;
         }
 
-        /* GIF Style */
-        .gif-container {
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .gif-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             .header {
@@ -371,13 +338,13 @@ type: text/html
                 padding: 1rem;
             }
 
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
+            .logo-container {
+                margin-bottom: 1rem;
             }
 
             .nav-links {
                 gap: 1rem;
+                justify-content: center;
             }
 
             .hero {
@@ -399,10 +366,6 @@ type: text/html
             .timeline {
                 padding-left: 1rem;
             }
-
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
     </style>
 </head>
@@ -414,18 +377,20 @@ type: text/html
 
     <!-- Header -->
     <header class="header">
-        <div class="header-content">
-            <a href="#" class="logo-left">TERESA FÜR</a>
-            <a href="#" class="logo-center">we are social</a>
-            <nav class="nav-links">
-                <a href="#about">Über diese Website</a>
-                <a href="#education">Ausbildung</a>
-                <a href="#experience">Erfahrung</a>
-                <a href="#skills">Fähigkeiten</a>
-                <a href="#motivation">Why me?</a>
-                <a href="#contact">LinkedIn</a>
-            </nav>
+        <div class="logo-container">
+            <a href="#" class="logo-line logo-left">TERESA FÜR</a>
+            <a href="#" class="logo-line">we</a>
+            <a href="#" class="logo-line">are</a>
+            <a href="#" class="logo-line">social</a>
         </div>
+        <nav class="nav-links">
+            <a href="#about">Über diese Website</a>
+            <a href="#education">Ausbildung</a>
+            <a href="#experience">Erfahrung</a>
+            <a href="#skills">Fähigkeiten</a>
+            <a href="#motivation">Why me?</a>
+            <a href="#contact">LinkedIn</a>
+        </nav>
     </header>
 
     <main>
@@ -456,28 +421,6 @@ type: text/html
                 </div>
             </div>
         </section>
-
-        <!-- Marquee Banner -->
-        <div class="marquee-container">
-            <div class="marquee-content">
-                <span>📊 Data Analytics</span>
-                <span>🎨 Kreativität</span>
-                <span>🌍 International</span>
-                <span>📈 Marketing</span>
-                <span>💡 Entrepreneurship</span>
-                <span>🐍 Python</span>
-                <span>🗃️ SQL</span>
-                <span>📋 Projektmanagement</span>
-                <span>📊 Data Analytics</span>
-                <span>🎨 Kreativität</span>
-                <span>🌍 International</span>
-                <span>📈 Marketing</span>
-                <span>💡 Entrepreneurship</span>
-                <span>🐍 Python</span>
-                <span>🗃️ SQL</span>
-                <span>📋 Projektmanagement</span>
-            </div>
-        </div>
 
         <!-- Education Section -->
         <section id="education">
@@ -559,7 +502,7 @@ type: text/html
                 </div>
                 <div class="timeline-item">
                     <h4>Atelier Reisenweber</h4>
-                    <p class="period">Auszubildende Friseurin | 09/2009 - 01/2013</p>
+                    <p class=\"period\">Auszubildende Friseurin | 09/2009 - 01/2013</p>
                     <p>
                         Serviceleistungen am Kunden, individuelle Beratung für Kunden zum Produktsortiment. Durchführung von La Biosthétique Wellness-Dienstleistungen. Konzeption und Moderation diverser Trend-Workshops.
                     </p>
@@ -613,6 +556,24 @@ type: text/html
                     <p>
                         Die Wörter analytisch und kreativ sind bei mir kein „entweder, oder“. Abgesehen von schnellen kreativen Problemlösungen, die man als Eventmanagerin immer parat haben muss, verwirkliche ich meine Kreativität in der analogen Fotografie, abstrakter Malerei wie Interesse an Kultur, Theater und Museen. Ich mag es, für mich schöne Dinge zu erschaffen. Genau so wie das Entdecken von unbekannten Geschichten.
                     </p>
+                </div>
+            </div>
+
+            <!-- Marquee Banner -->
+            <div class="marquee-container">
+                <div class="marquee-content">
+                    <span>📊 Tableau</span>
+                    <span>🗃️ SQL</span>
+                    <span>🐍 Python</span>
+                    <span>📋 Projektmanagement</span>
+                    <span>🌍 English Verhandlungssicher</span>
+                    <span>🤔 Neugierig</span>
+                    <span>📊 Tableau</span>
+                    <span>🗃️ SQL</span>
+                    <span>🐍 Python</span>
+                    <span>📋 Projektmanagement</span>
+                    <span>🌍 English Verhandlungssicher</span>
+                    <span>🤔 Neugierig</span>
                 </div>
             </div>
         </section>
