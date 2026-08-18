@@ -76,6 +76,18 @@
             line-height: 1.2;
         }
 
+        /* Navigation unter dem Banner */
+        .nav-container {
+            background-color: var(--weare-white);
+            padding: 0.5rem 2rem;
+            border-bottom: 1px solid var(--weare-light-gray);
+            position: fixed;
+            top: 56px; /* Unter dem Top Banner */
+            left: 0;
+            width: 100%;
+            z-index: 999;
+        }
+
         .nav-links {
             display: flex;
             gap: 1.5rem;
@@ -84,7 +96,7 @@
         }
 
         .nav-links a {
-            color: var(--weare-white);
+            color: var(--weare-red);
             text-decoration: none;
             font-size: 0.85rem;
             font-weight: 500;
@@ -99,7 +111,7 @@
 
         /* Main Content */
         main {
-            margin-top: 100px;
+            margin-top: 120px; /* Anpassung für Top Banner + Navigation */
         }
 
         /* Hero Section */
@@ -246,7 +258,7 @@
             color: var(--weare-white);
             padding: 1.5rem;
             border-radius: 0;
-            text-align: left; /* Linksbündig für Blog-Stil */
+            text-align: left;
         }
 
         .skill-card h3 {
@@ -254,14 +266,14 @@
             margin-bottom: 0.5rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            text-align: left; /* Linksbündig für Blog-Stil */
+            text-align: left;
         }
 
         .skill-card p {
             font-size: 0.95rem;
             line-height: 1.6;
             color: var(--weare-white);
-            text-align: left; /* Linksbündig für Blog-Stil */
+            text-align: left;
         }
 
         /* Marquee Banner */
@@ -464,6 +476,11 @@
                 gap: 1rem;
             }
 
+            .nav-container {
+                padding: 0.5rem 1rem;
+                top: 56px;
+            }
+
             .nav-links {
                 flex-direction: column;
                 gap: 0.5rem;
@@ -536,7 +553,7 @@
         <span>New 🔥 Application</span>
     </div>
 
-    <!-- Header -->
+    <!-- Header mit Logo -->
     <header class="header">
         <div class="header-content">
             <div class="logo-container">
@@ -544,16 +561,20 @@
                 <a href="#" class="logo-line">are</a>
                 <a href="#" class="logo-line">social</a>
             </div>
-            <nav class="nav-links">
-                <a href="#about">Über diese Website</a>
-                <a href="#education">Ausbildung</a>
-                <a href="#experience">Erfahrung</a>
-                <a href="#skills">Fähigkeiten</a>
-                <a href="#motivation">Why me?</a>
-                <a href="#contact">LinkedIn</a>
-            </nav>
         </div>
     </header>
+
+    <!-- Navigation unter dem Banner -->
+    <nav class="nav-container">
+        <div class="nav-links">
+            <a href="#about">Über diese Website</a>
+            <a href="#education">Ausbildung</a>
+            <a href="#experience">Erfahrung</a>
+            <a href="#skills">Fähigkeiten</a>
+            <a href="#motivation">Why me?</a>
+            <a href="#contact">LinkedIn</a>
+        </div>
+    </nav>
 
     <main>
         <!-- Hero Section -->
