@@ -29,6 +29,11 @@
             overflow-x: hidden;
         }
 
+        /* Hide all page content until password is entered */
+        #page-content {
+            display: none;
+        }
+
         /* Password Overlay */
         #password-overlay {
             position: fixed;
@@ -36,7 +41,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(0, 0, 0, 0.95);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -655,254 +660,257 @@
             <h2>Passwort geschützt</h2>
             <p>Bitte geben Sie das Passwort ein, um Zugriff zu erhalten:</p>
             <input type="password" id="password-input" placeholder="Passwort eingeben">
-            <button id="password-button">Einreichen</button>
+            <button id="password-button">let's go! 🤍</button>
             <p id="error-message">Falsches Passwort! Bitte versuchen Sie es erneut.</p>
         </div>
     </div>
 
-    <!-- Top Banner -->
-    <div class="top-banner">
-        <span>New 🔥 Application</span>
+    <!-- Page Content Container - Hidden until password is correct -->
+    <div id="page-content">
+        <!-- Top Banner -->
+        <div class="top-banner">
+            <span>New 🔥 Application</span>
+        </div>
+
+        <!-- Navigation unter dem Banner -->
+        <nav class="nav-container">
+            <div class="logo-container">
+                <span class="logo-line">we</span>
+                <span class="logo-line">are</span>
+                <span class="logo-line">social</span>
+            </div>
+            <div class="nav-links">
+                <a href="#about">Über diese Website</a>
+                <a href="#education">Ausbildung</a>
+                <a href="#experience">Erfahrung</a>
+                <a href="#skills">Fähigkeiten</a>
+                <a href="#motivation">Why me?</a>
+                <a href="#contact">LinkedIn</a>
+            </div>
+        </nav>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1>Bewerbung für die Stelle Junior Research & Insights Manager</h1>
+                <p>
+                    Ausgebildete Friseurin und Betriebswirtin B.A. mit den Schwerpunkten Marketing und Entrepreneurship und einer Weiterbildung in Data Analytics. Ich verbinde wirtschaftliches, analytisches Denken mit Interesse für Kultur und Menschen.
+                </p>
+            </section>
+
+            <!-- About Section -->
+            <section id="about">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>Über diese Website</h2>
+                        <p>
+                           Hallo we are social Team,<br><br>
+    leider ist die Stelle Junior Research & Insights Manager nicht mehr online. Das ist jedoch für mich kein Hindernis meine Bewerbung trotzdem bei euch einzureichen! Ich hoffe, dass Ihr diese für die Stelle berücksichtigt. Auf Basis meiner Weiterbildung in Data Analytics, habe ich meine Skills um Vibe Coding erweitert und reiche euch eine Website als Bewerbung ein.<br><br>
+                            <strong>#herewego 👩🏻‍💻</strong>
+                        </p>
+                    </div>
+                    <div class="about-gif">
+                        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZms1bGFwbGthOWZpbnk3MTZ4a2o4cndtcmhoc3JhbDhhaTBpaDd6cCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/JIX9t2j0ZTN9S/giphy.gif" alt="Coding GIF">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education">
+                <h2 class="section-title">Ausbildung</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>SPICED ACADEMY</h4>
+                        <p class="period">Data Analyst | 2025 - 2026</p>
+                        <p>
+                            Vollzeit-Weiterbildung in Englisch. Datenanalyse, SQL, Python, Tableau.
+                        </p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Hochschule für Technik und Wirtschaft Berlin</h4>
+                        <p class="period">Bachelor of Arts (BWL) | 2017 - 2025</p>
+                        <p>
+                            Vertiefungen: Marketing & Entrepreneurship. Bachelorarbeit: „Die Auswirkungen von K.I. im Marketing“.
+                        </p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Victor-Klemperer-Kolleg</h4>
+                        <p class="period">Fachabitur | 2015 - 2017</p>
+                        <p>
+                            Wahlfächer: Englisch & Spanisch, Philosophie, Schauspiel.
+                        </p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>OSZ Ästhetik und Technik</h4>
+                        <p class="period">Gesellin Friseurhandwerk | 2009 - 2013</p>
+                        <p>
+                            Ausbildung zur Friseurin.
+                        </p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Alexander-Pushkin-Oberschule</h4>
+                        <p class="period">Erweiterter Hauptschulabschluss | 2004 - 2009</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience">
+                <h2 class="section-title">Erfahrung</h2>
+                <div class="timeline">
+                    <!-- Bevermann Sales -->
+                    <div class="timeline-item">
+                        <h4>Bevermann Sales</h4>
+                        <p class="period">Praktikantin | 04/2025 - 05/2025</p>
+                        <ul>
+                            <li>Tägliche Arbeit mit CRM-System zur Pflege von Kundendaten und Dokumentation von Vertriebsprozessen.</li>
+                            <li>Selbstständige Analyse und Ansprache von Kontakten im B2B-Bereich inkl. Identifikation von Entscheidern (Kaltakquise).</li>
+                            <li>Branchenrecherche zur Analyse von Markt, Produkt und Optimierungspotenzialen in den Bereichen Asset-Management, Payroll-Management und Kreislaufwirtschaft.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Le Jardin -->
+                    <div class="timeline-item">
+                        <h4>Le Jardin</h4>
+                        <p class="period">Sales und Event Managerin | 01/2024 - 10/2024</p>
+                        <ul>
+                            <li>Konzeption und Umsetzung von Events mit bis zu 300 Gästen inkl. Vertragsverhandlungen und Budgetplanung.</li>
+                            <li>Verantwortlich für die Projektleitung, Koordination des internen Teams und externer Künstlern, Technikern sowie Sponsoren und Caterer.</li>
+                            <li>Eigenständige Konzeption des Newsletters zur Kundenbindung.</li>
+                            <li>Planung und Assistenz bei der Produktion von multimedialem Content (Videos, Bilder, Texte) für Social Media und die Fachzeitschrift <i>Gastivo</i>.</li>
+                            <li>Eigeninitiierte Wettbewerbsanalyse zur Optimierung von Preisen und Positionierung.</li>
+                        </ul>
+                    </div>
+
+                    <!-- sonneco -->
+                    <div class="timeline-item">
+                        <h4>sonneco</h4>
+                        <p class="period">Praktikantin | 11/2022 - 03/2023</p>
+                        <ul>
+                            <li>Vertrieb mit Schwerpunkt Erstansprache (B2B & B2G).</li>
+                            <li>Planung für europaweite Expansion: Eigenständige Vorbereitung und Nachbereitung von Gesprächen mit Wirtschaftsvertretern aus Italien, Schweiz und Belgien.</li>
+                            <li>Erstellung von Werbe- und Arbeitsunterlagen sowie Jobinseraten inkl. Vorauswahl von Bewerbungen.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Kitty Cheng -->
+                    <div class="timeline-item">
+                        <h4>Kitty Cheng</h4>
+                        <p class="period">Mitarbeiterin | 04/2018 - Heute</p>
+                        <ul>
+                            <li>Arbeit in dynamischer Umgebung mit Fokus auf Zusammenarbeit und Priorisierung.</li>
+                            <li>Erstellung von Abrechnungen für die Buchhaltung und verantwortungsvolle Dokumentation der Bargeldeinnahmen.</li>
+                            <li>Außerplanmäßiges Übernehmen verschiedener Rollen (z. B. Service, Garderobe, Runner, Bar) an einem Abend.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Freiberuflich für Adlon Holding -->
+                    <div class="timeline-item">
+                        <h4>Freiberuflich u.a. für Adlon Holding</h4>
+                        <p class="period">Eventhostess | 04/2013 - 09/2017</p>
+                        <ul>
+                            <li>Diverse Content-Erstellung für Social Media bei Events.</li>
+                            <li>Betreuung von Gästen und Kunden bei Events wie z. B. Filmpremieren und Modenschauen.</li>
+                            <li>Aktiver Verkauf von High-End-Beverage-Waren an Gäste.</li>
+                            <li>Ansprechpartnerin für Reservierungen und verantwortlich für die Organisation der Tischplanung am Abend.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Atelier Reisenweber -->
+                    <div class="timeline-item">
+                        <h4>Atelier Reisenweber</h4>
+                        <p class="period">Auszubildende Friseurin | 09/2009 - 01/2013</p>
+                        <ul>
+                            <li>Individuelle Beratung jedes Kunden und ggf. Erarbeiten von Alternativen, wenn Kundenwünsche nicht umsetzbar waren.</li>
+                            <li>Präsentation und Verkauf des Produktsortiments.</li>
+                            <li>Durchführung von La Biosthétique Wellness-Dienstleistungen um das Produkterlebnis gemäß Vorgaben zu vermitteln.</li>
+                            <li>Konzeption von Trend-Workshops für Kunden und Kollegen basierend auf Recherche und der Erkennung von Mustern in Magazinen, Tumblr, Blog-Einträgen und Werbematerial von La Biosthétique.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills">
+                <h2 class="section-title skills-title">Fähigkeiten</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>Fachliches Wissen durch mein Studium</h3>
+                        <p>
+                            Die Kurse Marketing und Entrepreneurship haben mir den Denkansatz vermittelt: Wo stehen wir, wo wollen wir hin, und was muss dafür getan werden? Und wie dieser praktisch, agil z.B. mit der scrum-Methode umgesetzt wird. Diese Entscheidungen will ich nicht nur auf Basis eines Bauchgefühls oder Meinung treffen, sondern auch Daten nutzen, die dafür zur Verfügung stehen.
+                        </p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Neugier & Lernbereitschaft</h3>
+                        <p>
+                            Um den Anforderungen einer digitalen Welt gerecht zu werden, absolvierte ich im Anschluss an mein Studium eine Weiterbildung in Data Analytics. Dort lernte ich mit der Ressource Data zu arbeiten und Erkenntnisse aus dieser zu gewinnen. Danach besuchte ich einen Spanischkurs an der Volkshochschule, um meine Skills aufzufrischen. Und vor ein paar Wochen einen Schachclub.
+                        </p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Erste internationale Erfahrung</h3>
+                        <p>
+                            In meinem Pflichtpraktikum bei sonneco wurde mir von der Geschäftsführung die Aufgabe übertragen, in Erfahrung zu bringen, welche Schritte nötig sind, um in andere Länder zu expandieren. Ich führte eigenständig Gespräche mit Wirtschaftsvertretungen und bereitete die Informationen im Anschluss auf. Des Weiteren arbeitete ich mit internationalen Kunden bei Le Jardin sowie einem internationalen Team.
+                        </p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Kreativität</h3>
+                        <p>
+                            Die Wörter analytisch und kreativ sind bei mir kein „entweder, oder“. Abgesehen von schnellen kreativen Problemlösungen, die man als Eventmanagerin immer parat haben muss, verwirkliche ich meine Kreativität in der analogen Fotografie, abstrakter Malerei wie Interesse an Kultur, Theater und Museen. Ich mag es, für mich schöne Dinge zu erschaffen. Genau so wie das Entdecken von unbekannten Geschichten.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Marquee Banner -->
+                <div class="marquee-container">
+                    <div class="marquee-content">
+                        <span>📊 Tableau</span>
+                        <span>🗃️ SQL</span>
+                        <span>🐍 Python</span>
+                        <span>📋 Datenanalyse</span>
+                        <span>📋 Projektmanagement</span>
+                        <span>🌍 English Verhandlungssicher</span>
+                        <span>🤔 Neugierig</span>
+                        <span>📊 Tableau</span>
+                        <span>🗃️ SQL</span>
+                        <span>🐍 Python</span>
+                        <span>📋 Datenanalyse</span>
+                        <span>📋 Projektmanagement</span>
+                        <span>🌍 English Verhandlungssicher</span>
+                        <span>🤔 Neugierig</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Motivation Section -->
+            <section id="motivation" class="motivation-section">
+                <h2 class="section-title centered">Why me?</h2>
+                <p>
+                    <strong>Betriebswirtin. Data Analyst. Optimist.</strong>
+                    <br><br>
+                    Ich bin keine klassische Absolventin die nur Theorie kann und keine Quereinsteigerin ohne Background. Ich verbinde akademisches Wissen, analytische Fähigkeiten und langjährige praktische Erfahrung, unter anderem direkt am Kunden, am Menschen. Ich will Neues lernen, meine Fähigkeiten kombinieren und Dinge entdecken, online wie offline.
+                </p>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <div class="cta-gif">
+                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXJmNzE4cXoycHQ4Ym51a2oybm1yZ3JocjB6azRsZHhvaTh1MjFscyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/yPhqlJccIOaru/giphy.gif" alt="CTA GIF Left">
+                </div>
+                <div class="cta-text">
+                    <h2>Hit me up!</h2>
+                    <p>Ich freue mich darauf, <strong>we are social</strong> bei einem Gespräch kennenzulernen und mehr über die Stelle zu erfahren.</p>
+                </div>
+                <div class="cta-gif">
+                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHEyb25lZGM2Y3QwZnFycXF1bDdweTYwejFxd2Z5NWFxaTQyMWZleCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l41m5YJ56zcextOSY/giphy.gif" alt="CTA GIF Right">
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Bewerbung für we are social</p>
+        </footer>
     </div>
-
-    <!-- Navigation unter dem Banner -->
-    <nav class="nav-container">
-        <div class="logo-container">
-            <span class="logo-line">we</span>
-            <span class="logo-line">are</span>
-            <span class="logo-line">social</span>
-        </div>
-        <div class="nav-links">
-            <a href="#about">Über diese Website</a>
-            <a href="#education">Ausbildung</a>
-            <a href="#experience">Erfahrung</a>
-            <a href="#skills">Fähigkeiten</a>
-            <a href="#motivation">Why me?</a>
-            <a href="#contact">LinkedIn</a>
-        </div>
-    </nav>
-
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <h1>Bewerbung für die Stelle Junior Research & Insights Manager</h1>
-            <p>
-                Ausgebildete Friseurin und Betriebswirtin B.A. mit den Schwerpunkten Marketing und Entrepreneurship und einer Weiterbildung in Data Analytics. Ich verbinde wirtschaftliches, analytisches Denken mit Interesse für Kultur und Menschen.
-            </p>
-        </section>
-
-        <!-- About Section -->
-        <section id="about">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Über diese Website</h2>
-                    <p>
-                       Hallo we are social Team,<br><br>
-leider ist die Stelle Junior Research & Insights Manager nicht mehr online. Das ist jedoch für mich kein Hindernis meine Bewerbung trotzdem bei euch einzureichen! Ich hoffe, dass Ihr diese für die Stelle berücksichtigt. Auf Basis meiner Weiterbildung in Data Analytics, habe ich meine Skills um Vibe Coding erweitert und reiche euch eine Website als Bewerbung ein.<br><br>
-                        <strong>#herewego 👩🏻‍💻</strong>
-                    </p>
-                </div>
-                <div class="about-gif">
-                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZms1bGFwbGthOWZpbnk3MTZ4a2o4cndtcmhoc3JhbDhhaTBpaDd6cCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/JIX9t2j0ZTN9S/giphy.gif" alt="Coding GIF">
-                </div>
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education">
-            <h2 class="section-title">Ausbildung</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h4>SPICED ACADEMY</h4>
-                    <p class="period">Data Analyst | 2025 - 2026</p>
-                    <p>
-                        Vollzeit-Weiterbildung in Englisch. Datenanalyse, SQL, Python, Tableau.
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <h4>Hochschule für Technik und Wirtschaft Berlin</h4>
-                    <p class="period">Bachelor of Arts (BWL) | 2017 - 2025</p>
-                    <p>
-                        Vertiefungen: Marketing & Entrepreneurship. Bachelorarbeit: „Die Auswirkungen von K.I. im Marketing“.
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <h4>Victor-Klemperer-Kolleg</h4>
-                    <p class="period">Fachabitur | 2015 - 2017</p>
-                    <p>
-                        Wahlfächer: Englisch & Spanisch, Philosophie, Schauspiel.
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <h4>OSZ Ästhetik und Technik</h4>
-                    <p class="period">Gesellin Friseurhandwerk | 2009 - 2013</p>
-                    <p>
-                        Ausbildung zur Friseurin.
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <h4>Alexander-Pushkin-Oberschule</h4>
-                    <p class="period">Erweiterter Hauptschulabschluss | 2004 - 2009</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience">
-            <h2 class="section-title">Erfahrung</h2>
-            <div class="timeline">
-                <!-- Bevermann Sales -->
-                <div class="timeline-item">
-                    <h4>Bevermann Sales</h4>
-                    <p class="period">Praktikantin | 04/2025 - 05/2025</p>
-                    <ul>
-                        <li>Tägliche Arbeit mit CRM-System zur Pflege von Kundendaten und Dokumentation von Vertriebsprozessen.</li>
-                        <li>Selbstständige Analyse und Ansprache von Kontakten im B2B-Bereich inkl. Identifikation von Entscheidern (Kaltakquise).</li>
-                        <li>Branchenrecherche zur Analyse von Markt, Produkt und Optimierungspotenzialen in den Bereichen Asset-Management, Payroll-Management und Kreislaufwirtschaft.</li>
-                    </ul>
-                </div>
-
-                <!-- Le Jardin -->
-                <div class="timeline-item">
-                    <h4>Le Jardin</h4>
-                    <p class="period">Sales und Event Managerin | 01/2024 - 10/2024</p>
-                    <ul>
-                        <li>Konzeption und Umsetzung von Events mit bis zu 300 Gästen inkl. Vertragsverhandlungen und Budgetplanung.</li>
-                        <li>Verantwortlich für die Projektleitung, Koordination des internen Teams und externer Künstlern, Technikern sowie Sponsoren und Caterer.</li>
-                        <li>Eigenständige Konzeption des Newsletters zur Kundenbindung.</li>
-                        <li>Planung und Assistenz bei der Produktion von multimedialem Content (Videos, Bilder, Texte) für Social Media und die Fachzeitschrift <i>Gastivo</i>.</li>
-                        <li>Eigeninitiierte Wettbewerbsanalyse zur Optimierung von Preisen und Positionierung.</li>
-                    </ul>
-                </div>
-
-                <!-- sonneco -->
-                <div class="timeline-item">
-                    <h4>sonneco</h4>
-                    <p class="period">Praktikantin | 11/2022 - 03/2023</p>
-                    <ul>
-                        <li>Vertrieb mit Schwerpunkt Erstansprache (B2B & B2G).</li>
-                        <li>Planung für europaweite Expansion: Eigenständige Vorbereitung und Nachbereitung von Gesprächen mit Wirtschaftsvertretern aus Italien, Schweiz und Belgien.</li>
-                        <li>Erstellung von Werbe- und Arbeitsunterlagen sowie Jobinseraten inkl. Vorauswahl von Bewerbungen.</li>
-                    </ul>
-                </div>
-
-                <!-- Kitty Cheng -->
-                <div class="timeline-item">
-                    <h4>Kitty Cheng</h4>
-                    <p class="period">Mitarbeiterin | 04/2018 - Heute</p>
-                    <ul>
-                        <li>Arbeit in dynamischer Umgebung mit Fokus auf Zusammenarbeit und Priorisierung.</li>
-                        <li>Erstellung von Abrechnungen für die Buchhaltung und verantwortungsvolle Dokumentation der Bargeldeinnahmen.</li>
-                        <li>Außerplanmäßiges Übernehmen verschiedener Rollen (z. B. Service, Garderobe, Runner, Bar) an einem Abend.</li>
-                    </ul>
-                </div>
-
-                <!-- Freiberuflich für Adlon Holding -->
-                <div class="timeline-item">
-                    <h4>Freiberuflich u.a. für Adlon Holding</h4>
-                    <p class="period">Eventhostess | 04/2013 - 09/2017</p>
-                    <ul>
-                        <li>Diverse Content-Erstellung für Social Media bei Events.</li>
-                        <li>Betreuung von Gästen und Kunden bei Events wie z. B. Filmpremieren und Modenschauen.</li>
-                        <li>Aktiver Verkauf von High-End-Beverage-Waren an Gäste.</li>
-                        <li>Ansprechpartnerin für Reservierungen und verantwortlich für die Organisation der Tischplanung am Abend.</li>
-                    </ul>
-                </div>
-
-                <!-- Atelier Reisenweber -->
-                <div class="timeline-item">
-                    <h4>Atelier Reisenweber</h4>
-                    <p class="period">Auszubildende Friseurin | 09/2009 - 01/2013</p>
-                    <ul>
-                        <li>Individuelle Beratung jedes Kunden und ggf. Erarbeiten von Alternativen, wenn Kundenwünsche nicht umsetzbar waren.</li>
-                        <li>Präsentation und Verkauf des Produktsortiments.</li>
-                        <li>Durchführung von La Biosthétique Wellness-Dienstleistungen um das Produkterlebnis gemäß Vorgaben zu vermitteln.</li>
-                        <li>Konzeption von Trend-Workshops für Kunden und Kollegen basierend auf Recherche und der Erkennung von Mustern in Magazinen, Tumblr, Blog-Einträgen und Werbematerial von La Biosthétique.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2 class="section-title skills-title">Fähigkeiten</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Fachliches Wissen durch mein Studium</h3>
-                    <p>
-                        Die Kurse Marketing und Entrepreneurship haben mir den Denkansatz vermittelt: Wo stehen wir, wo wollen wir hin, und was muss dafür getan werden? Und wie dieser praktisch, agil z.B. mit der scrum-Methode umgesetzt wird. Diese Entscheidungen will ich nicht nur auf Basis eines Bauchgefühls oder Meinung treffen, sondern auch Daten nutzen, die dafür zur Verfügung stehen.
-                    </p>
-                </div>
-                <div class="skill-card">
-                    <h3>Neugier & Lernbereitschaft</h3>
-                    <p>
-                        Um den Anforderungen einer digitalen Welt gerecht zu werden, absolvierte ich im Anschluss an mein Studium eine Weiterbildung in Data Analytics. Dort lernte ich mit der Ressource Data zu arbeiten und Erkenntnisse aus dieser zu gewinnen. Danach besuchte ich einen Spanischkurs an der Volkshochschule, um meine Skills aufzufrischen. Und vor ein paar Wochen einen Schachclub.
-                    </p>
-                </div>
-                <div class="skill-card">
-                    <h3>Erste internationale Erfahrung</h3>
-                    <p>
-                        In meinem Pflichtpraktikum bei sonneco wurde mir von der Geschäftsführung die Aufgabe übertragen, in Erfahrung zu bringen, welche Schritte nötig sind, um in andere Länder zu expandieren. Ich führte eigenständig Gespräche mit Wirtschaftsvertretungen und bereitete die Informationen im Anschluss auf. Des Weiteren arbeitete ich mit internationalen Kunden bei Le Jardin sowie einem internationalen Team.
-                    </p>
-                </div>
-                <div class="skill-card">
-                    <h3>Kreativität</h3>
-                    <p>
-                        Die Wörter analytisch und kreativ sind bei mir kein „entweder, oder“. Abgesehen von schnellen kreativen Problemlösungen, die man als Eventmanagerin immer parat haben muss, verwirkliche ich meine Kreativität in der analogen Fotografie, abstrakter Malerei wie Interesse an Kultur, Theater und Museen. Ich mag es, für mich schöne Dinge zu erschaffen. Genau so wie das Entdecken von unbekannten Geschichten.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Marquee Banner -->
-            <div class="marquee-container">
-                <div class="marquee-content">
-                    <span>📊 Tableau</span>
-                    <span>🗃️ SQL</span>
-                    <span>🐍 Python</span>
-                    <span>📋 Datenanalyse</span>
-                    <span>📋 Projektmanagement</span>
-                    <span>🌍 English Verhandlungssicher</span>
-                    <span>🤔 Neugierig</span>
-                    <span>📊 Tableau</span>
-                    <span>🗃️ SQL</span>
-                    <span>🐍 Python</span>
-                    <span>📋 Datenanalyse</span>
-                    <span>📋 Projektmanagement</span>
-                    <span>🌍 English Verhandlungssicher</span>
-                    <span>🤔 Neugierig</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Motivation Section -->
-        <section id="motivation" class="motivation-section">
-            <h2 class="section-title centered">Why me?</h2>
-            <p>
-                <strong>Betriebswirtin. Data Analyst. Optimist.</strong>
-                <br><br>
-                Ich bin keine klassische Absolventin die nur Theorie kann und keine Quereinsteigerin ohne Background. Ich verbinde akademisches Wissen, analytische Fähigkeiten und langjährige praktische Erfahrung, unter anderem direkt am Kunden, am Menschen. Ich will Neues lernen, meine Fähigkeiten kombinieren und Dinge entdecken, online wie offline.
-            </p>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="cta-section">
-            <div class="cta-gif">
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXJmNzE4cXoycHQ4Ym51a2oybm1yZ3JocjB6azRsZHhvaTh1MjFscyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/yPhqlJccIOaru/giphy.gif" alt="CTA GIF Left">
-            </div>
-            <div class="cta-text">
-                <h2>Hit me up!</h2>
-                <p>Ich freue mich darauf, <strong>we are social</strong> bei einem Gespräch kennenzulernen und mehr über die Stelle zu erfahren.</p>
-            </div>
-            <div class="cta-gif">
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHEyb25lZGM2Y3QwZnFycXF1bDdweTYwejFxd2Z5NWFxaTQyMWZleCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l41m5YJ56zcextOSY/giphy.gif" alt="CTA GIF Right">
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>Bewerbung für we are social</p>
-    </footer>
 
     <script>
         // Passwort-Schutz
@@ -911,9 +919,11 @@ leider ist die Stelle Junior Research & Insights Manager nicht mehr online. Das 
         function checkPassword() {
             const input = document.getElementById('password-input');
             const errorMessage = document.getElementById('error-message');
+            const pageContent = document.getElementById('page-content');
 
             if (input.value === correctPassword) {
                 document.getElementById('password-overlay').style.display = 'none';
+                pageContent.style.display = 'block';
             } else {
                 errorMessage.style.display = 'block';
                 input.value = '';
@@ -929,8 +939,8 @@ leider ist die Stelle Junior Research & Insights Manager nicht mehr online. Das 
             }
         });
 
-        // Verhindere Zugriff auf die Seite, bis das Passwort eingegeben wurde
-        document.addEventListener('DOMContentLoaded', function() {
+        // Zeige das Passwort-Overlay beim Laden der Seite
+        window.addEventListener('DOMContentLoaded', function() {
             document.getElementById('password-overlay').style.display = 'flex';
         });
     </script>
