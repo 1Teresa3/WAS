@@ -42,7 +42,7 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.95);
-            display: flex;
+            display: none;
             justify-content: center;
             align-items: center;
             z-index: 10000;
@@ -659,8 +659,8 @@
         <div id="password-modal">
             <h2>Passwort geschützt</h2>
             <p>Bitte geben Sie das Passwort ein, um Zugriff zu erhalten:</p>
-            <input type="password" id="password-input" placeholder="Passwort eingeben">
-            <button id="password-button">let's go! 🤍</button>
+            <input type="password" id="password-input" placeholder="Passwort eingeben" autofocus>
+            <button id="password-button">let's go! ♥️</button>
             <p id="error-message">Falsches Passwort! Bitte versuchen Sie es erneut.</p>
         </div>
     </div>
@@ -705,7 +705,7 @@
                         <h2>Über diese Website</h2>
                         <p>
                            Hallo we are social Team,<br><br>
-    leider ist die Stelle Junior Research & Insights Manager nicht mehr online. Das ist jedoch für mich kein Hindernis meine Bewerbung trotzdem bei euch einzureichen! Ich hoffe, dass Ihr diese für die Stelle berücksichtigt. Auf Basis meiner Weiterbildung in Data Analytics, habe ich meine Skills um Vibe Coding erweitert und reiche euch eine Website als Bewerbung ein.<br><br>
+leider ist die Stelle Junior Research & Insights Manager nicht mehr online. Das ist jedoch für mich kein Hindernis meine Bewerbung trotzdem bei euch einzureichen! Ich hoffe, dass Ihr diese für die Stelle berücksichtigt. Auf Basis meiner Weiterbildung in Data Analytics, habe ich meine Skills um Vibe Coding erweitert und reiche euch eine Website als Bewerbung ein.<br><br>
                             <strong>#herewego 👩🏻‍💻</strong>
                         </p>
                     </div>
@@ -849,7 +849,7 @@
                     <div class="skill-card">
                         <h3>Erste internationale Erfahrung</h3>
                         <p>
-                            In meinem Pflichtpraktikum bei sonneco wurde mir von der Geschäftsführung die Aufgabe übertragen, in Erfahrung zu bringen, welche Schritte nötig sind, um in andere Länder zu expandieren. Ich initiirte und führte eigenständig Gespräche mit Wirtschaftsvertretungen und bereitete die Informationen im Anschluss auf. Des Weiteren arbeitete ich mit internationalen Kunden bei Le Jardin sowie einem internationalen Team.
+                            In meinem Pflichtpraktikum bei sonneco wurde mir von der Geschäftsführung die Aufgabe übertragen, in Erfahrung zu bringen, welche Schritte nötig sind, um in andere Länder zu expandieren. Ich führte eigenständig Gespräche mit Wirtschaftsvertretungen und bereitete die Informationen im Anschluss auf. Des Weiteren arbeitete ich mit internationalen Kunden bei Le Jardin sowie einem internationalen Team.
                         </p>
                     </div>
                     <div class="skill-card">
@@ -915,15 +915,18 @@
     <script>
         // Passwort-Schutz
         const correctPassword = 'weare';
+        const passwordOverlay = document.getElementById('password-overlay');
+        const pageContent = document.getElementById('page-content');
 
         function checkPassword() {
             const input = document.getElementById('password-input');
             const errorMessage = document.getElementById('error-message');
-            const pageContent = document.getElementById('page-content');
 
             if (input.value === correctPassword) {
-                document.getElementById('password-overlay').style.display = 'none';
+                passwordOverlay.style.display = 'none';
                 pageContent.style.display = 'block';
+                // Speichere in sessionStorage, dass Passwort bereits eingegeben wurde
+                sessionStorage.setItem('passwordEntered', 'true');
             } else {
                 errorMessage.style.display = 'block';
                 input.value = '';
@@ -939,9 +942,17 @@
             }
         });
 
-        // Zeige das Passwort-Overlay beim Laden der Seite
+        // Prüfe beim Laden der Seite, ob Passwort bereits in dieser Session eingegeben wurde
         window.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('password-overlay').style.display = 'flex';
+            // Wenn Passwort bereits in dieser Session eingegeben wurde, zeige direkt die Seite
+            if (sessionStorage.getItem('passwordEntered') === 'true') {
+                passwordOverlay.style.display = 'none';
+                pageContent.style.display = 'block';
+            } else {
+                // Sonst zeige das Passwort-Overlay
+                passwordOverlay.style.display = 'flex';
+                pageContent.style.display = 'none';
+            }
         });
     </script>
 </body>
