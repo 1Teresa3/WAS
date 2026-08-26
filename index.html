@@ -29,6 +29,79 @@
             overflow-x: hidden;
         }
 
+        /* Password Overlay */
+        #password-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        #password-modal {
+            background: var(--weare-white);
+            padding: 2.5rem;
+            border-radius: 0;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        #password-modal h2 {
+            color: var(--weare-black);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        #password-modal p {
+            color: var(--weare-dark-gray);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        #password-input {
+            padding: 0.75rem;
+            width: 100%;
+            border: 2px solid var(--weare-light-gray);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            box-sizing: border-box;
+        }
+
+        #password-input:focus {
+            outline: none;
+            border-color: var(--weare-red);
+        }
+
+        #password-button {
+            background-color: var(--weare-red);
+            color: var(--weare-white);
+            border: none;
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        #password-button:hover {
+            background-color: var(--weare-black);
+        }
+
+        #error-message {
+            color: var(--weare-red);
+            margin-top: 1rem;
+            font-weight: 500;
+            display: none;
+        }
+
         /* Top Banner */
         .top-banner {
             position: fixed;
@@ -479,6 +552,11 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            #password-modal {
+                padding: 2rem 1.5rem;
+                width: 95%;
+            }
+
             .nav-container {
                 padding: 0.5rem 0;
                 top: 24px;
@@ -571,6 +649,17 @@
     </style>
 </head>
 <body>
+    <!-- Password Protection Overlay -->
+    <div id="password-overlay">
+        <div id="password-modal">
+            <h2>Passwort geschützt</h2>
+            <p>Bitte geben Sie das Passwort ein, um Zugriff zu erhalten:</p>
+            <input type="password" id="password-input" placeholder="Passwort eingeben">
+            <button id="password-button">Einreichen</button>
+            <p id="error-message">Falsches Passwort! Bitte versuchen Sie es erneut.</p>
+        </div>
+    </div>
+
     <!-- Top Banner -->
     <div class="top-banner">
         <span>New 🔥 Application</span>
@@ -814,5 +903,36 @@ leider ist die Stelle Junior Research & Insights Manager nicht mehr online. Das 
     <footer class="footer">
         <p>Bewerbung für we are social</p>
     </footer>
+
+    <script>
+        // Passwort-Schutz
+        const correctPassword = 'weare';
+
+        function checkPassword() {
+            const input = document.getElementById('password-input');
+            const errorMessage = document.getElementById('error-message');
+
+            if (input.value === correctPassword) {
+                document.getElementById('password-overlay').style.display = 'none';
+            } else {
+                errorMessage.style.display = 'block';
+                input.value = '';
+                input.focus();
+            }
+        }
+
+        // Event Listener für Button und Enter-Taste
+        document.getElementById('password-button').addEventListener('click', checkPassword);
+        document.getElementById('password-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+
+        // Verhindere Zugriff auf die Seite, bis das Passwort eingegeben wurde
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('password-overlay').style.display = 'flex';
+        });
+    </script>
 </body>
 </html>
